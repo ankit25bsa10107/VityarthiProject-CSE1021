@@ -5,8 +5,7 @@ def add_book(title):
     print(f"Book '{title}' added.")
 
 def display_books():
-    print("
-Library Books:")
+    print("Library Books:")
     for idx, book in enumerate(library):
         status = "Borrowed" if book["borrowed"] else "Available"
         print(f"{idx + 1}. {book['title']} - {status}")
@@ -24,4 +23,14 @@ def return_book(index):
         print(f"You have returned '{library[index]['title']}'.")
     else:
         print("Book was not borrowed.")
+
+# Example usage:
+add_book("The Great Gatsby")
+add_book("1984")
+display_books()
+borrow_book(0)
+display_books()
+return_book(0)
+display_books()
+
 
